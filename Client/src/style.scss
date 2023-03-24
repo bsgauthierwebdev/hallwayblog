@@ -117,13 +117,15 @@ $warmBlue : #191970;
         // FOOTER
 
         footer {
-            margin-top: 100px;
-            padding: 20px;
+            position: absolute;
+            bottom: 0px;
+            width: 1024px;
             background-color: $lightGreen;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 12px;
+            font-style: 12px;
+            
             img {
                 height: 50px;
             }
