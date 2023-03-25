@@ -139,5 +139,34 @@ $warmBlue : #191970;
                 height: 50px;
             }
         }
+
+        // HOME
+
+        .home {
+
+            .posts {
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 150px;
+
+                .post {
+                    display: flex;
+                    gap: 100px;
+
+                    .img {
+                        flex: 1;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .content {
+                        flex: 2;
+                    }
+                }
+            }
+        }
     }
 }
