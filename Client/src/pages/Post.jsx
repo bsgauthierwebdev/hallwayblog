@@ -10,7 +10,7 @@ const Post = () => {
       <div className="content">
         <img src="https://www.scripps.org/sparkle-assets/images/mediterraneandiet_web-7ce12493f37a553ff8892a1c8ea600eb.jpg" alt="Mediterranean Diet" />
         <div className="user">
-          <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="user image" />
+          <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="user" />
           <div className="info">
             <span>Brent</span>
             <p>Posted 3/24/2023</p>
