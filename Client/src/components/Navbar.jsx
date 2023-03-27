@@ -30,7 +30,7 @@ const Navbar = () => {
           </Link>
           <span>UserName</span>
           <span>Logout</span>
-          <span className = 'compose'>
+          <span className = 'new'>
             <Link className = 'link' to = '/compose'>New</Link>
           </span>
         </div>
