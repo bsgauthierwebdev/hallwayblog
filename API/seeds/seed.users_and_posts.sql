@@ -10,7 +10,7 @@ VALUES
     (
         'Test Post 1',
         'This is the first test post',
-        'This is the content for the first test post'
+        'This is the content for the first test post',
         'Test Image 1',
         1
     ),
@@ -18,7 +18,7 @@ VALUES
     (
         'Test Post 2',
         'This is the second test post',
-        'This is the content for the second test post'
+        'This is the content for the second test post',
         'Test Image 2',
         2
     ),
@@ -26,7 +26,7 @@ VALUES
     (
         'Test Post 3',
         'This is the third test post',
-        'This is the content for the third test post'
+        'This is the content for the third test post',
         'Test Image 3',
         1
     ),
@@ -34,7 +34,7 @@ VALUES
     (
         'Test Post 4',
         'This is the fourth test post',
-        'This is the content for the fourth test post'
+        'This is the content for the first test post',
         'Test Image 4',
         2
     );
