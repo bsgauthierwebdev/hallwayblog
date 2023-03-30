@@ -1,10 +1,9 @@
 const pool = require('../db');
 const bcrypt = require('bcryptjs');
 
-
 const register = (req, res) => {
     // CHECK IF EMAIL OR USERNAME EXISTS
-    const {username, email, pw, img} = req.body;
+    const {username, email, pw} = req.body;
     const q = 'SELECT * FROM users WHERE email = ? OR username = ?';
     
     pool.query(q, [email, username], (err, results) => {
