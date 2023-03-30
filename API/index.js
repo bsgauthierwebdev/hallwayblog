@@ -2,9 +2,8 @@ const express = require('express');
 const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/posts');
 const userRoutes = require('./routes/users');
-const port = 8800;
-
 const app = express();
+const port = 8800;
 
 app.use(express.json());
 
