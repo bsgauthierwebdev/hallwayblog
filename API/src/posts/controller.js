@@ -33,20 +33,20 @@ const addPost = (req, res) => {
     );
 };
 
-// const updatePost = (req, res) => {
-//     const id = parseInt(req.params.id);
-//     // Extract data from request
-//     const {title, descr, content, img} = req.body;
-//     // Check to see if post exists
-//     pool.query(queries.getPostById, [id], (err, data) => {
-//         if (!data.rows.length) return res.status(404).send('Post not found');
-//         pool.query(queries.updatePost, [title, descr, content, img], (err, data) => {
-//             console.log([title, descr, content, img]);
-//             if (err) return res.status(400).send('Bad request');
-//             return res.status(201).send('Post updated');
-//         });
-//     });
-// };
+const updatePost = (req, res) => {
+    const id = parseInt(req.params.id);
+    // Extract data from request
+    const {title, descr, content, img} = req.body;
+    // Check to see if post exists
+    pool.query(queries.getPostById, [id], (err, data) => {
+        if (!data.rows.length) return res.status(404).send('Post not found');
+        pool.query(queries.updatePost, [title, descr, content, img, id], (err, data) => {
+            console.log([title, descr, content, img, id]);
+            if (err) return res.status(400).send('Bad request');
+            return res.status(201).send('Post updated');
+        });
+    });
+};
 
 const deletePost = (req, res) => {
     const id = parseInt(req.params.id);
@@ -67,6 +67,6 @@ module.exports = {
     getPosts,
     getPostById,
     addPost,
-    // updatePost,
+    updatePost,
     deletePost
 }
