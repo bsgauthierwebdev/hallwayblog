@@ -1,7 +1,7 @@
 const express = require('express');
 const authRoutes = require('./routes/auth');
-const postRoutes = require('./routes/posts');
-const userRoutes = require('./routes/users');
+const postRoutes = require('./src/posts/routes');
+const userRoutes = require('./src/users/routes');
 const app = express();
 const port = 8800;
 
