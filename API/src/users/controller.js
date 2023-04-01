@@ -53,50 +53,48 @@ const updateUsername = (req, res) => {
     });
 };
 
-// const updateEmail = (req, res) => {
-//     const id = parseInt(req.params.id);
-//     // Extract email from request
-//     const {email} = req.params.email;
-//     console.log([id, email]);
+const updateEmail = (req, res) => {
+    const id = parseInt(req.params.id);
+    // Extract email from request
+    const {email} = req.body;
+    // Check if user exists
+    pool.query(queries.getUserById, [id], (err, data) => {
+        if (!data.rows.length) return res.status(404).send('User not found');
+        // If user exists, update email
+        pool.query(queries.updateEmail, [email, id], (err, data) => {
+            if (err) return res.status(400).send('Bad request');
+            res.status(200).send(`Email updated to ${email}`);
+        });
+    });
+};
 
-//     pool.query(queries.getUserById, [id], (err, data) => {
-//         if (!data.rows.length) {
-//             return res.status(404).send(`User ${id} not found`);
-//         };
-//     });
-// };
+const updatePassword = (req, res) => {
+    const id = parseInt(req.params.id);
+    // Extract password from request
+    const {pw} = req.body;
+    // Check if user exists
+    pool.query(queries.getUserById, [id], (err, data) => {
+        if (!data.rows.length) return res.status(404).send('User not found');
+        pool.query(queries.updatePassword, [pw, id], (err, data) => {
+            if (err) return res.status(400).send('Bad request');
+            res.status(200).send('Password updated');
+        });
+    });
+};
 
-// const updateUserPassword = (req, res) => {
-//     const id = parseInt(req.params.id);
-//     // Extract username from request body
-//     const {pw} = req.body;
-//     // Check to see if user exists
-//     pool.query(queries.getUserById, [id], (err, data) => {
-//         if (!data.rows.length) {
-//             return res.status(404).send('User not found in system');
-//         }
-//         pool.query(queries.updateUserName, [pw], (err, data) => {
-//             if (err) return res.status(400).send('Bad request');
-//             res.status(200).send('Username updated');
-//         });
-//     });
-// };
-
-// const updateUserImage = (req, res) => {
-//     const id = parseInt(req.params.id);
-//     // Extract username from request body
-//     const {img} = req.body;
-//     // Check to see if user exists
-//     pool.query(queries.getUserById, [id], (err, data) => {
-//         if (!data.rows.length) {
-//             return res.status(404).send('User not found in system');
-//         }
-//         pool.query(queries.updateUserName, [img], (err, data) => {
-//             if (err) return res.status(400).send('Bad request');
-//             res.status(200).send('Username updated');
-//         });
-//     });
-// };
+const updateImage = (req, res) => {
+    const id = parseInt(req.params.id);
+    // Extract image URL from request
+    const {img} = req.body;
+    // Check if user exists
+    pool.query(queries.getUserById, [id], (err, data) => {
+        if (!data.rows.length) return res.status(400).send('User not found');
+        pool.query(queries.updateImage, [img, id], (err, data) => {
+            if (err) return res.status(500).send('Bad request');
+            return res.status(200).send(`Image URL updated to ${img}`);
+        });
+    });
+};
 
 const deleteUser = (req, res) => {
     const id = parseInt(req.params.id);
@@ -118,8 +116,8 @@ module.exports = {
     getUserById,
     addUser,
     updateUsername,
-    // updateEmail,
-    // updatePassword,
-    // updateImage,
+    updateEmail,
+    updatePassword,
+    updateImage,
     deleteUser
 }

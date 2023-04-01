@@ -6,10 +6,10 @@ const router = Router();
 router.get('/', controller.getUsers);
 router.post('/', controller.addUser);
 router.get('/:id', controller.getUserById);
-router.put('/:id', controller.updateUsername);
-// router.put('/:id', controller.updateEmail);
-// router.put('/:id', controller.updatePassword);
-// router.put('/:id', controller.updateImage);
+router.put('/:id/update/username', controller.updateUsername);
+router.put('/:id/update/email', controller.updateEmail);
+router.put('/:id/update/password', controller.updatePassword);
+router.put('/:id/update/image', controller.updateImage);
 router.delete('/:id', controller.deleteUser);
 
 module.exports = router;
