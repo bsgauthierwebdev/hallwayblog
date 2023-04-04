@@ -3,10 +3,6 @@ const controller = require('./controller');
 
 const router = Router();
 
-router.get('/', controller.getPosts);
-router.post('/', controller.addPost);
-router.get('/:id', controller.getPostById);
-router.put('/:id', controller.updatePost);
-router.delete('/:id', controller.deletePost);
+router.get('/test', controller.testPostRoutes);
 
 module.exports = router;

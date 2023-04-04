@@ -1,10 +1,12 @@
 const express = require('express');
-const authRoutes = require('./routes/auth');
+const cors = require('cors');
+const authRoutes = require('./src/auth/routes');
 const postRoutes = require('./src/posts/routes');
 const userRoutes = require('./src/users/routes');
 const app = express();
 const port = 8800;
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
