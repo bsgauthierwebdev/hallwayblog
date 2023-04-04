@@ -16,12 +16,12 @@ const Register = () => {
   // Check to see if state changes
   // console.log(inputs);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async e => {
+    e.preventDefault()
     try {
-      const res = await axios.post('/auth/register', inputs);
+      const res = await axios.post('/auth/register', inputs)
       console.log(res);
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
   }
